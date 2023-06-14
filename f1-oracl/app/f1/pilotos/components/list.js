@@ -68,7 +68,7 @@ export default function ListaPilotos() {
     className="divide-y divide-gray-100 divide overflow-hidden shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl overflow-y-scroll"
     >
     {people.map((person) => (
-        <li key={person.team} className="relative flex justify-between gap-x-6 px-4 py-7 cursor-pointer sm:px-6">
+        <li key={person.name} className="relative flex justify-between gap-x-6 px-4 py-7 cursor-pointer sm:px-6">
             <div className="flex gap-x-4">
                 <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
                 <div className="min-w-0 flex-auto">
