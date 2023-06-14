@@ -12,10 +12,10 @@ export default function LandingPage() {
                 height={220}
                 className="mx-auto"
             />
-            <LandingPageButton text="Reglas" link="/reglas" />
-            <LandingPageButton text="Predecir Carreras" link="/prediccion" />
-            <LandingPageButton text="Pilotos" link="/pilotos" />
-            <LandingPageButton text="Equipos" link="/equipos" />
+            <LandingPageButton text="Reglas" link="/f1/reglas" />
+            <LandingPageButton text="Predecir Carreras" link="/f1/prediccion" />
+            <LandingPageButton text="Pilotos" link="/f1/pilotos" />
+            <LandingPageButton text="Equipos" link="/f1/equipos" />
         </div>
     )
 }
