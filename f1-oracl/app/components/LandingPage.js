@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import LandingPageButton from "./LandingPageButton";
@@ -12,10 +13,10 @@ export default function LandingPage() {
                 height={220}
                 className="mx-auto"
             />
-            <LandingPageButton text="Reglas" />
-            <LandingPageButton text="Predecir Carreras" />
-            <LandingPageButton text="Pilotos" />
-            <LandingPageButton text="Equipos" />
+            <LandingPageButton text="Reglas" link="/reglas" />
+            <LandingPageButton text="Predecir Carreras" link="/prediccion" />
+            <LandingPageButton text="Pilotos" link="/pilotos" />
+            <LandingPageButton text="Equipos" link="/equipos" />
         </div>
     )
 }
