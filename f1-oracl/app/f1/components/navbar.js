@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
@@ -7,7 +7,17 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar() {
+export default function NavBar() {  
+    const [activeButton, setActiveButton] = useState('/f1/reglas');
+
+    const buttonClass = (href) => {
+      return `block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+        activeButton === href
+          ? "border-indigo-500 bg-indigo-50 text-indigo-700"
+          : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+      }`;
+    }
+
     return (
     <Disclosure as="nav" className="shadow">
       {({ open }) => (
@@ -137,40 +147,42 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
                 href="/f1/reglas"
-                className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
+                onClick={() => setActiveButton("/f1/reglas")}
+                className={buttonClass("/f1/reglas")}
               >
                 Reglas
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/f1/prediccion"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                onClick={() => setActiveButton("/f1/prediccion")}
+                className={buttonClass("/f1/prediccion")}
               >
                 Predecir Carreras
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/f1/pilotos"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                onClick={() => setActiveButton("/f1/pilotos")}
+                className={buttonClass("/f1/pilotos")}
               >
                 Pilotos
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/f1/equipos"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                onClick={() => setActiveButton("/f1/equipos")}
+                className={buttonClass("/f1/equipos")}
               >
                 Equipos
               </Disclosure.Button>
             </div>
-           
           </Disclosure.Panel>
         </>
       )}
