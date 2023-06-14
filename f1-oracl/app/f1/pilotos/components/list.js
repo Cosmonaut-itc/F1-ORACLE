@@ -8,7 +8,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/XYwkM0C/checo.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/mx.png',  
     },
     {
         name: 'Max Verstappen',
@@ -16,7 +16,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/wdLNLRr/verstappen.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/nl.png',  
     },
     {
         name: 'Lewis Hamilton',
@@ -24,7 +24,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/bN8TtPJ/hamilton.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/gb.png',  
 
     },
     {
@@ -33,7 +33,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/bHJyrjt/bottas.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/fi.png',  
     },
     {
         name: 'Charles Leclerc',
@@ -41,7 +41,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/b1Gc29k/leclerc.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/mc.png',  
 
     },
     {
@@ -50,7 +50,7 @@ const people = [
         imageUrl:
             'https://i.ibb.co/ZV0mZC8/sainz.png',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/es.png',  
 
     },
 ]
@@ -84,7 +84,7 @@ export default function ListaPilotos() {
                 </div>
             </div>
             <div className="flex items-center gap-x-4">
-                <ChevronRightIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" /> 
+                <img className="flex-none bg-transparent" src={person.countryURL} alt="" />
             </div>
         </li>
     ))}
