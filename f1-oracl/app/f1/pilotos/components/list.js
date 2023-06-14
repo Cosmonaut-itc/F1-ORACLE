@@ -6,7 +6,7 @@ const people = [
         name: 'Checo Perez',
         team: 'Red Bull Racing',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/XYwkM0C/checo.png',
         countryURL:
             'PLACEHOLDER',  
     },
@@ -14,7 +14,7 @@ const people = [
         name: 'Max Verstappen',
         team: 'Red Bull Racing',
         imageUrl:
-            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/wdLNLRr/verstappen.png',
         countryURL:
             'PLACEHOLDER',  
     },
@@ -22,7 +22,7 @@ const people = [
         name: 'Lewis Hamilton',
         team: 'Mercedez AMG Petronas',
         imageUrl:
-            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/bN8TtPJ/hamilton.png',
         countryURL:
             'PLACEHOLDER',  
 
@@ -31,7 +31,7 @@ const people = [
         name: 'Valtteri Bottas',
         team: 'Alpha Romeo Racing',
         imageUrl:
-            'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/bHJyrjt/bottas.png',
         countryURL:
             'PLACEHOLDER',  
     },
@@ -39,7 +39,7 @@ const people = [
         name: 'Charles Leclerc',
         team: 'Ferrarri',
         imageUrl:
-            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/b1Gc29k/leclerc.png',
         countryURL:
             'PLACEHOLDER',  
 
@@ -48,7 +48,7 @@ const people = [
         name: 'Carlos Sainz',
         team: 'Ferrari',
         imageUrl:
-            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            'https://i.ibb.co/ZV0mZC8/sainz.png',
         countryURL:
             'PLACEHOLDER',  
 
