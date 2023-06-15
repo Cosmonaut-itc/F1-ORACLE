@@ -1,12 +1,15 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import Link from 'next/link'
+'use client'
+import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation'
+import Image from 'next/image';
 
-
-const people = [
+const pilots = [
     {
         id: 1,
         name: 'Checo Perez',
         team: 'Red Bull Racing',
+        imageUr2:
+            '/checo.png',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/perez.jpg.img.1920.medium.jpg/1677069773437.jpg',
         countryURL:
@@ -19,6 +22,8 @@ const people = [
         team: 'Red Bull Racing',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/verstappen.jpg.img.640.medium.jpg/1677069646195.jpg',
+        imageUrl2:
+            '/verstappen.png',
         countryURL:
             'PLACEHOLDER',  
         href: '/f1/pilotos/info'  
@@ -29,6 +34,8 @@ const people = [
         team: 'Mercedez AMG Petronas',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/hamilton.jpg.img.1536.high.jpg',
+        imageUrl2:
+            '/hamilton.png',
         countryURL:
             'PLACEHOLDER',  
         href: '/f1/pilotos/info' 
@@ -40,6 +47,8 @@ const people = [
         team: 'Alpha Romeo Racing',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/bottas.jpg.img.1920.medium.jpg/1677069810695.jpg',
+        imageUrl2:
+            '/bottas.png',
         countryURL:
             'PLACEHOLDER',  
         href: '/f1/pilotos/info' 
@@ -50,6 +59,8 @@ const people = [
         team: 'Ferrarri',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/leclerc.jpg.img.1920.medium.jpg/1677069223130.jpg',
+        imageUrl2:
+            '/lecrerc.png',
         countryURL:
             'PLACEHOLDER',  
         href: '/f1/pilotos/info' 
@@ -61,51 +72,26 @@ const people = [
         team: 'Ferrari',
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sainz.jpg.img.1920.medium.jpg/1677069189406.jpg',
+        imageUrl2:
+            '/sainz.png',
         countryURL:
             'PLACEHOLDER',  
         href: '/f1/pilotos/info' 
 
     },
 ]
+export default function Pilotos(){
+    var searchParams = useSearchParams();
+    const data = searchParams.get('ID')
+    console.log(pilots);
+    console.log(data)
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-    }
+    return(
+        <div>
+            <h1 className="text-4xl font-bold text-start mt-9 mx-4">{pilots[data-1].name}</h1>
 
-//En vez de usar el <ChevronRightIcon /> cambienlo por una imagen del pais del piloto
-
-export default function ListaPilotos() {
-    return (
-    <ul
-    role="list"
-    className="divide-y divide-gray-100 divide overflow-hidden shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl overflow-y-scroll"
-    >
-    {people.map((person) => (
-        <li key={person.name} className="relative flex justify-between gap-x-6 px-4 py-7 cursor-pointer sm:px-6">
-            <div className="flex gap-x-4">
-                <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
-                <div className="min-w-0 flex-auto">
-                    <p className="text-sm font-semibold leading-6 text-white">
-                    <Link
-                        href={{
-                            pathname: person.href,
-                            query: {ID:person.id} // the data
-                        }}>
-                            <span className="absolute inset-x-0 -top-px bottom-0" />
-                            {person.name}
-                    </Link>
-                        
-                    </p>
-                    <p className="mt-1 flex text-xs leading-5 text-gray-400">
-                        {person.team}
-                    </p>
-                </div>
-            </div>
-            <div className="flex items-center gap-x-4">
-                <ChevronRightIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" /> 
-            </div>
-        </li>
-    ))}
-    </ul>
-)
+            <img className=" flex-none rounded-full bg-gray-50" src={pilots[data-1].imageUrl} alt="" width={100} height={100}/>
+            <Image className='mt-4 mx-auto' src={pilots[data-1].imageUr2} height={500} width={500}/>
+        </div>
+    )
 }
