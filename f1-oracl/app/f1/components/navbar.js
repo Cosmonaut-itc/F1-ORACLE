@@ -2,21 +2,21 @@ import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function NavBar() {  
-    const [activeButton, setActiveButton] = useState('/f1/reglas');
+  const menuItems = [
+    { name: 'Reglas', link: '/f1/reglas' },
+    { name: 'Predecir Carreras', link: '/f1/prediccion' },
+    { name: 'Pilotos', link: '/f1/pilotos' },
+    { name: 'Equipos', link: '/f1/equipos' },
+  ];
 
-    const buttonClass = (href) => {
-      return `block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
-        activeButton === href
-          ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-          : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-      }`;
-    }
+  const [currentItem, setCurrentItem] = useState(menuItems[0].name);
 
     return (
     <Disclosure as="nav" className="shadow">
@@ -139,7 +139,7 @@ export default function NavBar() {
               </div>
               <div className="-mr-2 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -151,42 +151,28 @@ export default function NavBar() {
             </div>
           </div>
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 pb-3 pt-2">
-              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              <Disclosure.Button
-                as="a"
-                href="/f1/reglas"
-                onClick={() => setActiveButton("/f1/reglas")}
-                className={buttonClass("/f1/reglas")}
-              >
-                Reglas
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/f1/prediccion"
-                onClick={() => setActiveButton("/f1/prediccion")}
-                className={buttonClass("/f1/prediccion")}
-              >
-                Predecir Carreras
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/f1/pilotos"
-                onClick={() => setActiveButton("/f1/pilotos")}
-                className={buttonClass("/f1/pilotos")}
-              >
-                Pilotos
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/f1/equipos"
-                onClick={() => setActiveButton("/f1/equipos")}
-                className={buttonClass("/f1/equipos")}
-              >
-                Equipos
-              </Disclosure.Button>
-            </div>
-          </Disclosure.Panel>
+              <div className="space-y-1 pb-3 pt-2">
+                  {menuItems.map((item) => (
+                      <Link legacyBehavior={true}
+                          key={item.name}
+                          href={item.link}
+                      >
+                          <a
+                              className={classNames(
+                                  item.name === currentItem
+                                      ? 'border-red-500 bg-red-50 text-red-700'
+                                      : 'border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800',
+                                  'block border-l-4 py-2 pl-3 pr-4 text-base font-medium'
+                              )}
+                              aria-current={item.name === currentItem ? 'page' : undefined}
+                              onClick={() => setCurrentItem(item.name)}
+                          >
+                              {item.name}
+                          </a>
+                      </Link>
+                  ))}
+              </div>                   
+            </Disclosure.Panel>
         </>
       )}
     </Disclosure>

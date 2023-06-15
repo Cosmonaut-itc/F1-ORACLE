@@ -10,7 +10,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/perez.jpg.img.1920.medium.jpg/1677069773437.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/mx.png',    
         href: '/f1/pilotos/info'
     },
     {
@@ -20,7 +20,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/verstappen.jpg.img.640.medium.jpg/1677069646195.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/nl.png',  
         href: '/f1/pilotos/info'  
     },
     {
@@ -30,7 +30,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/hamilton.jpg.img.1536.high.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/gb.png',
         href: '/f1/pilotos/info' 
 
     },
@@ -41,7 +41,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/bottas.jpg.img.1920.medium.jpg/1677069810695.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/fi.png',
         href: '/f1/pilotos/info' 
     },
     {
@@ -51,7 +51,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/leclerc.jpg.img.1920.medium.jpg/1677069223130.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/mc.png',
         href: '/f1/pilotos/info' 
 
     },
@@ -62,7 +62,7 @@ const people = [
         imageUrl:
             'https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sainz.jpg.img.1920.medium.jpg/1677069189406.jpg',
         countryURL:
-            'PLACEHOLDER',  
+            'https://flagcdn.com/w40/es.png',
         href: '/f1/pilotos/info' 
 
     },
@@ -102,7 +102,7 @@ export default function ListaPilotos() {
                 </div>
             </div>
             <div className="flex items-center gap-x-4">
-                <ChevronRightIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" /> 
+                <img className="flex-none bg-transparent" src={person.countryURL} alt="" />
             </div>
         </li>
     ))}
